@@ -1,0 +1,159 @@
+#notif {
+    position: absolute;
+    left: 125px;
+    bottom: 600px;
+    background-color: white;
+    border-color: white !important;
+    font-size: 22px;
+    border-radius: 6px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+}
+
+#notif:hover {
+    background-color: #ccc;
+}
+
+#compte:hover {
+    background-color: #ccc;
+}
+
+#Favoris:hover {
+    background-color: #ccc;
+}
+
+#Paramètre:hover {
+    background-color: #ccc;
+}
+
+#compte {
+    position: absolute;
+    left: 0px;
+    bottom: 600px;
+    background-color: white;
+    border-color: white !important;
+    font-size: 22px;
+    border-radius: 6px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+}
+
+#Favoris {
+    position: absolute;
+    left: 250px;
+    bottom: 600px;
+    background-color: white;
+    border-color: white !important;
+    font-size: 22px;
+    border-radius: 6px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+}
+
+#Paramètre {
+    position: absolute;
+    left: 365px;
+    bottom: 600px;
+    background-color: white;
+    border-color: white !important;
+    font-size: 22px;
+    border-radius: 6px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+}
+
+.change-password-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-top: 150px;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.changepwd {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.modal-content h3 {
+    text-align: center;
+}
+
+.close-button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    background-color: #45a049;
+}
+
+.show {
+    display: block;
+}

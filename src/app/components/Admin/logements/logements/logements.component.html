@@ -1,0 +1,45 @@
+<div class="buttons">
+    <button type="button" class="btn btn-light" id="logements" (click)="gotoLogements()">logements</button>
+    <button type="button" class="btn btn-light" id="users" (click)="gotoUsers()">Utilisateurs</button>
+
+</div>
+
+<hr style="width: 1520px;position:absolute;bottom: 510px;right:1px ;height: 75px;">
+
+
+
+<form [formGroup]="form" style="height: 100%; overflow-y: auto;" (ngSubmit)="rechercher()">
+    <div class="allcontainer">
+
+        <div class="search-container">
+            <div class="regionx2">
+                <div class="viillle">
+                    <h2>Region :</h2>
+                </div>
+                <div class="vi" id="border">
+                    <select class="form-select" aria-label="Default select example" formControlName="region"
+                        name="region">
+                        <option value="" selected>region</option>
+                        <option *ngFor="let governorate of citiesService.governorates">{{ governorate.name }}</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="search-button">Rechercher</button>
+        </div>
+
+    </div>
+</form>
+
+
+<div class="card-container" *ngIf="houses.length > 0">
+    <div class="card" *ngFor="let house of houses" (click)="showDetails(house)">
+        <img [src]="house.photos[0]" alt="House Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ house.titre }}</h5>
+            <!-- <p class="card-text">{{ house.description }}</p>  -->
+            <p class="card-text">{{ house.prix }} dt</p>
+            <p class="card-text">{{ house.surface }} m²</p>
+            <p class="card-text">{{ house.delegation }}</p>
+        </div>
+    </div>
+</div>

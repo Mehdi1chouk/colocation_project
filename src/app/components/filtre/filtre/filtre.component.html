@@ -1,0 +1,340 @@
+<div class="pop-up">
+
+
+    <div class="carreau1">
+        <h2 mat-dialog-title
+            style="text-align: center;color: rgb(252, 252, 252);font-size: 22px;font-family:sans-serif;position: absolute;right: 350px;bottom: -10px;">
+            Filtres</h2>
+
+        <div>
+            <button mat-button [mat-dialog-close]="true" class="close-icon">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div style="position: relative; overflow-y:auto;max-height: 480px;height: 900px;bottom: -70px;">
+        <form [formGroup]="form" style="height: 100%; overflow-y: auto;" method="POST">
+
+            <div>
+
+                <div class="prix">
+                    <h1>Prix : </h1>
+                </div>
+
+
+
+                <div>
+
+                    <div class="prixmin">
+                        <div class="row g-2">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input class="form-control" id="floatingInputGrid" formControlName="prixmin"
+                                        name="prixmin">
+                                    <label for="floatingInputGrid">prix minimum</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash">
+                        <h2>--</h2>
+                    </div>
+                    <div class="prixmax">
+                        <div class="row g-2">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <input class="form-control" id="floatingInputGrid" formControlName="prixmax"
+                                        name="prixmax">
+                                    <label for="floatingInputGrid">prix maximum</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr style="position: absolute;width: 90%;right:45px;bottom: 290px;">
+
+                </div>
+
+                <div class="ville">
+                    <h1>Ville : </h1>
+                </div>
+
+
+                <div>
+
+
+                    <div>
+                        <div class="viillle">
+                            <h2>Ville :</h2>
+                        </div>
+                        <div class="vi" id="border">
+                            <select class="form-select" aria-label="Default select example" formControlName="region"
+                                name="region">
+                                <option value="" selected>region</option>
+                                <option *ngFor="let governorate of citiesService.governorates">{{ governorate.name }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="Région">
+                        <h2>Région :</h2>
+                    </div>
+                    <div class="reg" id="border">
+                        <select class="form-select" aria-label="Default select example" formControlName="delegation"
+                            name="delegation">
+                            <option value="" selected>delegation</option>
+                            <option *ngFor="let delegation of citiesService.getCitiesByRegion(form.get('region').value)"
+                                [value]="delegation">
+                                {{ delegation }}
+                            </option>
+                        </select>
+                    </div>
+
+
+
+
+                    <div class="quartier">
+                        <h2>Quartier :</h2>
+                    </div>
+                    <div class="qua" id="border">
+                        <select class="form-select" aria-label="Default select example" formControlName="localite"
+                            name="localite">
+                            <option value="" selected>localite</option>
+                            <option *ngFor="let localite of localites" [value]="localite">{{ localite }}</option>
+                        </select>
+                    </div>
+
+
+
+
+
+                    <hr style="position: absolute;width: 90%;right:45px;bottom: 100px;">
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="type">
+                    <h1>Type : </h1>
+                </div>
+
+                <div class="selectype">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="maison" style="height: 25px;width: 25px;"
+                            formControlName="maison" value="maison" id="maisonCheckbox"> &nbsp;&nbsp;
+                        <label class="form-check-label" for="maisonCheckbox" style="position:relative;top: 5px;">
+                            Maison
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="selectype5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="villa" style="height: 25px;width: 25px;"
+                            formControlName="villa" value="Villa" id="villaCheckbox"> &nbsp;&nbsp;
+                        <label class="form-check-label" for="villaCheckbox" style="position:relative;top: 5px;">
+                            Villa
+                        </label>
+                    </div>
+
+                </div>
+
+
+                <div class="selectype2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="maisondhotes"
+                            style="height: 25px;width: 25px;" formControlName="maisondhotes" value="Maison d'hôtes"
+                            id="maisondhotesCheckbox"> &nbsp;&nbsp;
+                        <label class="form-check-label" for="maisondhotesCheckbox" style="position:relative;top: 5px;">
+                            Maison d'hôtes
+                        </label>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="selectype3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" name="appartement"
+                            style="height: 25px;width: 25px;" formControlName="appartement" value="Appartement"
+                            id="appartementCheckbox"> &nbsp;&nbsp;
+                        <label class="form-check-label" for="appartementCheckbox" style="position:relative;top: 5px;">
+                            Appartement
+                        </label>
+                    </div>
+
+                </div>
+
+
+
+                <div class="selectype4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="chambrepartage"
+                            style="height: 25px;width: 25px;" formControlName="chambrepartage" value="Chambre partagé"
+                            id="chambrepartageCheckbox"> &nbsp;&nbsp;
+                        <label class="form-check-label" for="chambrepartageCheckbox"
+                            style="position:relative;top: 5px;">
+                            Chambre partagé
+                        </label>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+                <hr style="position: absolute;width: 90%;right:45px;bottom: -120px;">
+
+                <div class="chambreetlits">
+                    <h1>Chambres et lits : </h1>
+                </div>
+
+
+                <div class="chambre">
+                    <h2>Chambre &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:</h2>
+                </div>
+
+                <div class="nbrechambre">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+                        <input type="radio" class="btn-check" name="nbrechambre" id="btnradio1" autocomplete="off"
+                            formControlName="nbrechambre" value="1">
+                        <label class="btn btn-outline-primary" for="btnradio1">1</label>
+
+                        <input type="radio" class="btn-check" name="nbrechambre" id="btnradio2" autocomplete="off"
+                            formControlName="nbrechambre" value="2">
+                        <label class="btn btn-outline-primary" for="btnradio2">2</label>
+
+                        <input type="radio" class="btn-check" name="nbrechambre" id="btnradio3" autocomplete="off"
+                            formControlName="nbrechambre" value="3">
+                        <label class="btn btn-outline-primary" for="btnradio3">3</label>
+
+                        <input type="radio" class="btn-check" name="nbrechambre" id="btnradio4" autocomplete="off"
+                            formControlName="nbrechambre" value="4">
+                        <label class="btn btn-outline-primary" for="btnradio4">4</label>
+
+                        <input type="radio" class="btn-check" name="nbrechambre" id="btnradio5" autocomplete="off"
+                            formControlName="nbrechambre" value="5">
+                        <label class="btn btn-outline-primary" for="btnradio5">5</label>
+
+                        <input type="radio" class="btn-check" name="nbrechambre" id="btnradio6" autocomplete="off"
+                            formControlName="nbrechambre" value="6+">
+                        <label class="btn btn-outline-primary" for="btnradio6">6+</label>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <div class="lits">
+                    <h2>Lits
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                    </h2>
+                </div>
+
+                <div class="nbrelits">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+                        <input type="radio" class="btn-check" name="nbrelits" id="btnradio11" autocomplete="off"
+                            formControlName="nbrelits" value="1">
+                        <label class="btn btn-outline-primary" for="btnradio11">1</label>
+
+                        <input type="radio" class="btn-check" name="nbrelits" id="btnradio22" autocomplete="off"
+                            formControlName="nbrelits" value="2">
+                        <label class="btn btn-outline-primary" for="btnradio22">2</label>
+
+                        <input type="radio" class="btn-check" name="nbrelits" id="btnradio33" autocomplete="off"
+                            formControlName="nbrelits" value="3">
+                        <label class="btn btn-outline-primary" for="btnradio33">3</label>
+
+                        <input type="radio" class="btn-check" name="nbrelits" id="btnradio44" autocomplete="off"
+                            formControlName="nbrelits" value="4">
+                        <label class="btn btn-outline-primary" for="btnradio44">4</label>
+
+                        <input type="radio" class="btn-check" name="nbrelits" id="btnradio55" autocomplete="off"
+                            formControlName="nbrelits" value="5">
+                        <label class="btn btn-outline-primary" for="btnradio55">5</label>
+
+                        <input type="radio" class="btn-check" name="nbrelits" id="btnradio66" autocomplete="off"
+                            formControlName="nbrelits" value="6+">
+                        <label class="btn btn-outline-primary" for="btnradio66">6+</label>
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="sdb">
+                    <h2>Salles de bain &nbsp;&nbsp;:</h2>
+                </div>
+
+                <div class="nbresdb">
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+                        <input type="radio" class="btn-check" name="nbresdb" id="btnradio111" autocomplete="off"
+                            formControlName="nbresdb" value="1">
+                        <label class="btn btn-outline-primary" for="btnradio111">1</label>
+
+                        <input type="radio" class="btn-check" name="nbresdb" id="btnradio222" autocomplete="off"
+                            formControlName="nbresdb" value="2">
+                        <label class="btn btn-outline-primary" for="btnradio222">2</label>
+
+                        <input type="radio" class="btn-check" name="nbresdb" id="btnradio333" autocomplete="off"
+                            formControlName="nbresdb" value="3">
+                        <label class="btn btn-outline-primary" for="btnradio333">3</label>
+
+                        <input type="radio" class="btn-check" name="nbresdb" id="btnradio444" autocomplete="off"
+                            formControlName="nbresdb" value="4">
+                        <label class="btn btn-outline-primary" for="btnradio444">4</label>
+
+                        <input type="radio" class="btn-check" name="nbresdb" id="btnradio555" autocomplete="off"
+                            formControlName="nbresdb" value="5">
+                        <label class="btn btn-outline-primary" for="btnradio555">5</label>
+
+                        <input type="radio" class="btn-check" name="nbresdb" id="btnradio666" autocomplete="off"
+                            formControlName="nbresdb" value="6+">
+                        <label class="btn btn-outline-primary" for="btnradio666">6+</label>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </form>
+
+
+        <div class="carreau2">
+            <div>
+                <button type="button" class="btnn" (click)="filtrer()" [mat-dialog-close]="true"
+                    style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 18px;">Filtrer
+                </button>
+            </div>
+        </div>
+    </div>

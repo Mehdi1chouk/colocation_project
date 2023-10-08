@@ -1,0 +1,34 @@
+<div>
+  <button type="button" mat-button color="primary" class="filter" (click)=" filtrer()">Filtrer
+  </button>
+</div>
+
+<form [formGroup]="form">
+  <div class="trie">
+    <select class="form-select" aria-label="Default select example" formControlName="trier" name="trier"
+      (change)="triAnnonce()">
+      <option value="" selected>trier</option>
+      <option value="prixminimum">prix minimum</option>
+      <option value="prixmaximum">prix maximum</option>
+    </select>
+  </div>
+</form>
+
+<hr
+  style="height:2px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0);width: 100%;position:absolute;bottom: 610px;">
+
+
+<div class="card-container">
+  <div class="card" *ngFor="let house of showSortedHouses ? sortedHouses : houses" (click)="showDetails(house)">
+    <img [src]="house.photos[0]" alt="House Image">
+    <div class="card-body">
+      <h5 class="card-title">{{ house.titre }}</h5>
+      <!-- <p class="card-text">{{ house.description }}</p>  -->
+      <p class="card-text">{{ house.prix }} dt</p>
+      <p class="card-text">{{ house.surface }} m²</p>
+      <p class="card-text">{{ house.delegation }}</p>
+    </div>
+  </div>
+</div>
+
+<!--    <i class="fa fa-heart" [class.favorite]="house.favorite" (click)="toggleFavorite(house)" id="favoris"></i>  -->

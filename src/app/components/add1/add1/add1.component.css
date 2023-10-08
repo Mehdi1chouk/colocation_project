@@ -1,0 +1,301 @@
+.etage {
+    position: absolute;
+    right: -520px;
+    width: 200px;
+    top: 95px;
+}
+
+.first {
+    position: absolute;
+    right: 1300px;
+    bottom: 550px;
+}
+
+.type {
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.radio {
+    position: absolute;
+    right: 1250px;
+    bottom: 500px;
+}
+
+.appartement {
+    position: absolute;
+    right: -30px;
+    bottom: 25px;
+}
+
+.maison {
+    position: absolute;
+    right: 16px;
+    bottom: -5px;
+}
+
+.villa {
+    position: absolute;
+    right: 40px;
+    bottom: -40px;
+}
+
+.chambrepartage {
+    position: absolute;
+    right: -253px;
+    bottom: 25px;
+}
+
+.hôtes {
+    position: absolute;
+    right: -236px;
+    bottom: -7px;
+}
+
+.nouveau {
+    position: absolute;
+    right: -420px;
+    bottom: 2px;
+}
+
+.bonetat {
+    position: absolute;
+    right: -416px;
+    bottom: -25px;
+}
+
+.disponibilité {
+    position: absolute;
+    right: 1200px;
+    bottom: 300px;
+}
+
+.dispo {
+    font-size: 27px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.date {
+    position: absolute;
+    right: 1300px;
+    bottom: 260px;
+}
+
+.de {
+    position: absolute;
+    right: -200px;
+    bottom: 0px;
+}
+
+.aa {
+    position: absolute;
+    right: -300px;
+    bottom: -10px;
+}
+
+.dd {
+    position: absolute;
+    right: -20px;
+    bottom: -10px;
+}
+
+.a {
+    position: absolute;
+    right: -480px;
+    bottom: 0px;
+}
+
+.localisation {
+    position: absolute;
+    right: 1200px;
+    bottom: -130px;
+}
+
+.local {
+    font-size: 27px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.na {
+    font-size: 18px;
+}
+
+.Région {
+    position: absolute;
+    right: 1260px;
+    bottom: -180px;
+    font-size: 18px;
+}
+
+.reg {
+    position: absolute;
+    right: 1060px;
+    bottom: -180px;
+    width: 180px;
+}
+
+#border {
+    border-width: thin;
+    border-color: rgb(198, 196, 196);
+}
+
+.ville {
+    position: absolute;
+    right: 970px;
+    bottom: -180px;
+    font-size: 18px;
+}
+
+.vi {
+    position: absolute;
+    right: 760px;
+    bottom: -180px;
+    width: 190px;
+}
+
+.quartier {
+    position: absolute;
+    right: 1260px;
+    bottom: -250px;
+    font-size: 18px;
+}
+
+.qua {
+    position: absolute;
+    right: 1060px;
+    bottom: -250px;
+    width: 180px;
+}
+
+.code_postal {
+    position: absolute;
+    right: 970px;
+    bottom: -250px;
+    font-size: 18px;
+}
+
+.cp {
+    position: absolute;
+    right: 760px;
+    bottom: -250px;
+    width: 190px;
+}
+
+#next1 {
+    position: relative;
+    right: -1310px;
+    cursor: pointer;
+}
+
+#map {
+    position: absolute;
+    /* bottom: -400px;*/
+    width: 45% !important;
+    height: 600px !important;
+    bottom: -900px;
+    right: 670px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+#war {
+    position: absolute;
+    bottom: 280px;
+    left: 160px;
+}
+
+.calendar-container {
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: absolute;
+    bottom: -10px;
+    left: 340px;
+    /*background-color: rgb(248, 247, 247);*/
+}
+
+.month-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar {
+    margin-top: 10px;
+}
+
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eee;
+    padding: 5px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+}
+
+.days>div {
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.days>div.other-month {
+    color: #ccc;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin: 0;
+}
+
+.selected {
+    background-color: #e44040;
+    /* Set your desired background color */
+    font-weight: bold;
+    /* Set your desired font weight or any other styles */
+}
+
+#next {
+    position: absolute;
+    left: 150px;
+}
+
+#month {
+    position: absolute;
+    left: 50px;
+}
+
+#year {
+    position: absolute;
+    left: 190px;
+    width: 100px;
+}
+
+.current-day {
+    background-color: green;
+    color: white;
+}
+
+.disabled-day {
+    text-decoration: line-through;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.option {
+    position: absolute;
+    bottom: -80px;
+    width: 200px;
+    right: -290px;
+}

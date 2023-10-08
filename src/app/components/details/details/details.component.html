@@ -1,0 +1,206 @@
+<div class="carreau1">
+  <div class="carousel-container">
+    <carousel>
+      <slide *ngFor="let photo of house?.photos">
+        <div class="pom">
+          <img [src]="photo" alt="" class="img" loading="lazy" style="width: 70%;height: 70%;" />
+        </div>
+      </slide>
+    </carousel>
+  </div>
+</div>
+
+
+
+<div class="publicationdate">
+  <h4 class="ff">Date de publication : {{ formatDatedepublication(house?.datedepublication) }}</h4>
+</div>
+<div class="carreau2">
+</div>
+
+<h1 class="titre"> Titre : {{ house?.titre }} </h1>
+
+<h2 class="localisation">Localisation : {{house?.region}},{{house?.delegation}},{{house?.localite}}</h2>
+
+<h2 class="prix"> Prix : {{ house?.prix }} TND/nuit</h2>
+
+<h2 class="surface">Surface : {{ house?.surface }} m²</h2>
+
+
+<div class="carreau3">
+  <h2><i style="position: absolute ;right: 520px;top:15px;">Caractéristiques</i></h2>
+  <div>
+    <h2 style="position: absolute ;right: 625px;top:80px;">Type : </h2>
+    <h3 style="position: absolute ;left: 210px;top:85px;">{{ house?.selectedtype}} </h3>
+  </div>
+
+  <div style="display: flex; align-items: right;">
+    <h2 style="position: absolute ;right: 630px;top:133px;">Etat : </h2>
+    <h3 style="position: absolute ;left: 210px;top:137px;">{{ house?.etat }} </h3>
+  </div>
+
+  <div style="display: flex; align-items: right;">
+    <h2 style="position: absolute ;right: 585px;top:180px;">Chambre :</h2>
+    <h3 style="position: absolute ;left: 210px;top:185px;">{{ house?.chambre }} </h3>
+  </div>
+
+  <div style="display: flex; align-items: right;">
+    <h2 style="position: absolute ;right: 630px;top:225px;">Lits :</h2>
+    <h3 style="position: absolute ;left: 210px;top:228px;">{{ house?.lits }} </h3>
+  </div>
+
+  <div style="display: flex; align-items: right;">
+    <h2 style="position: absolute ;right: 538px;top:270px;">Salle de bains :</h2>
+    <h3 style="position: absolute ;left: 210px;top:275px;">{{ house?.sdb }} </h3>
+  </div>
+
+
+  <div style="display: flex; align-items: right;">
+    <h2 style="position: absolute ;right: 548px;top:315px;width: 130px;">Code postal :</h2>
+    <h3 style="position: absolute ;left: 210px;top:320px;">{{ house?.cp }} </h3>
+  </div>
+
+
+  <div style="display: flex; align-items: right;">
+    <h2 style="position: absolute ;right: 610px;top:360px;">Etage :</h2>
+    <h3 style="position: absolute ;left: 210px;top:365px;">{{ house?.etage}} </h3>
+  </div>
+
+  <div style="display: flex; align-items: right;" *ngIf="house?.selectedtype === 'Appartement'">
+    <h2 style="position: absolute ;right: 545px;top:410px;width: 130px;">Asenceur :</h2>
+    <h3 style="position: absolute ;left: 210px;top:412px;">{{ house?.asenceur}} </h3>
+  </div>
+  <div style="display: flex; align-items: right;" *ngIf="house?.selectedtype === 'Maison'">
+    <h2 style="position: absolute ;right: 545px;top:410px;width: 130px;">Garage :</h2>
+    <h3 style="position: absolute ;left: 210px;top:412px;">{{ house?.garage}} </h3>
+  </div>
+  <div style="display: flex; align-items: right;" *ngIf="house?.selectedtype === 'Villa'">
+    <h2 style="position: absolute ;right: 545px;top:410px;width: 130px;">Piscine :</h2>
+    <h3 style="position: absolute ;left: 210px;top:412px;">{{ house?.piscine}} </h3>
+  </div>
+
+
+
+  <hr style="width: 600px;position:absolute;bottom: 325px;right:80px ;">
+
+  <hr style="width: 600px;position: absolute;bottom: 275px;right: 80px;">
+
+  <hr style="width: 600px;position: absolute;bottom: 225px;right: 80px;">
+
+  <hr style="width: 600px;position: absolute;bottom: 180px;right: 80px;">
+
+  <hr style="width: 600px;position: absolute;bottom: 135px;right: 80px;">
+
+  <hr style="width: 600px;position: absolute;bottom: 90px;right: 80px;">
+
+  <hr style="width: 600px;position: absolute;bottom: 45px;right: 80px;">
+
+
+</div>
+
+
+<div class="carreau4">
+  <div>
+    <h2><i style="position: absolute ;right: 540px;top:18px;">Description</i></h2>
+  </div>
+  <h2 style="text-align: center;display: flex; align-items: center;position: absolute;padding: 60px;">{{
+    house?.description }}
+  </h2>
+</div>
+
+
+
+<div id="map"></div>
+<div class="carreau5">
+  <h1 class="reservation">Reservation</h1>
+  <hr style="width: 690px;position: absolute;bottom: 470px;right: 5px;">
+  <h3 class="prenomproprietaire">Propriétaire : {{owner.nom}}
+  </h3>
+  <p class="selectthedate">veuillez selectioner les dates : </p>
+</div>
+
+
+<div class="calendar-container" [formGroup]="form">
+  <div class="month-navigation">
+    <button (click)="prevMonth()">&lt;</button>
+    <h2 id="month">{{ currentMonth }} {{ currentYear }}</h2>
+    <button id="next" (click)="nextMonth()">&gt;</button>
+  </div>
+
+  <div class="calendar">
+    <div class="weekdays">
+      <div>Sun</div>
+      <div>Mon</div>
+      <div>Tue</div>
+      <div>Wed</div>
+      <div>Thu</div>
+      <div>Fri</div>
+      <div>Sat</div>
+    </div>
+    <div class="days">
+      <div *ngFor="let day of calendarData" [class.other-month]="day < 0" [class.selected]="isSelected(day)"
+        [class.current-day]="isCurrentDay(day)" [class.past-day]="isPastDay(day)"
+        [class.crossed]="isPastDay(day) && !isSelected(day)" [class.disabled]="isDisabled(day) && !isSelected(day)"
+        [class.highlighted]="isInElDate(day)" (click)="toggleSelection(day)" style="cursor: pointer;">
+        {{ day !== -1 ? day : '' }}
+      </div>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-light" id="reservation" (click)="reservation()">reserver</button>
+
+
+
+<div id="map"></div>
+
+
+<div class="equipements">
+  <div class="equip" style="height: 100px; padding: 5px;">
+    <div>
+      <h1>Equipements :</h1>
+      <p>ce logement contient ces equipements : </p>
+      <br />
+      <div class="icon-table">
+        <div class="icon-row" *ngFor="let icon of showIcon; let i = index;">
+          <img [src]="icon" alt="House Image" class="image" style="padding: 18px;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="carreau6">
+  <p class="msgalert">Utilisez ce champ pour envoyer un message ou poser des questions au propriétaire du logement
+    concernant des informations supplémentaires sur la maison. Assurez-vous de vérifier régulièrement votre messagerie
+    dans votre espace de compte, car c'est
+    là que vous trouverez les réponses à vos messages.Nous encourageons une communication fluide et rapide entre vous et
+    le propriétaire pour répondre à toutes vos préoccupations et faciliter votre expérience de réservation. N'hésitez
+    pas à poser
+    des questions sur les équipements, les règles de la maison, les disponibilités ou toute autre information dont vous
+    avez besoin pour prendre une décision éclairée.</p>
+
+  <h1 class="Messagerie">Messagerie</h1>
+  <hr style="width: 670px;position: absolute;bottom: 470px;right: 5px;">
+
+
+
+
+</div>
+
+
+
+
+
+<div class="chat-container">
+  <div class="chat-messages">
+    <div class="message" *ngFor="let message of messages">
+      <div class="message-sender">{{ message.sender }}</div>
+      <div class="message-content">{{ message.content }}</div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" [(ngModel)]="newMessage" placeholder="Type your message...">
+    <button (click)="sendMessage(newMessage)">Send</button>
+  </div>
+</div>

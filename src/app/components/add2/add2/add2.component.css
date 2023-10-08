@@ -1,0 +1,252 @@
+#previous {
+    position: relative;
+    right: -1330px;
+    cursor: pointer;
+    bottom: -300px;
+}
+
+.local {
+    font-size: 27px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.surface {
+    position: absolute;
+    right: 1255px;
+    bottom: 550px;
+}
+
+.m2 {
+    position: absolute;
+    right: -70px;
+    bottom: 37px;
+}
+
+.su {
+    position: absolute;
+    right: 1260px;
+    bottom: 468px;
+    font-size: 18px;
+}
+
+.suu {
+    position: absolute;
+    right: 1040px;
+    bottom: 480px;
+}
+
+.chambre {
+    position: absolute;
+    right: 1225px;
+    bottom: 370px;
+    font-size: 18px;
+}
+
+.lits {
+    position: absolute;
+    right: 1060px;
+    bottom: 370px;
+    font-size: 18px;
+}
+
+.sdb {
+    position: absolute;
+    right: 790px;
+    bottom: 370px;
+    font-size: 18px;
+}
+
+.prix {
+    position: absolute;
+    right: 1305px;
+    bottom: 220px;
+}
+
+.pr {
+    position: absolute;
+    right: 1260px;
+    bottom: 140px;
+    font-size: 18px;
+}
+
+.prr {
+    position: absolute;
+    right: 1040px;
+    bottom: 150px;
+}
+
+.photo {
+    position: absolute;
+    right: 1060px;
+    bottom: 10px;
+}
+
+.container {
+    max-width: 500px;
+    /*margin: 0 auto;*/
+    text-align: center;
+    position: absolute;
+    bottom: -280px;
+    right: 800px;
+    width: 900px;
+    height: 230px;
+}
+
+.upload_hide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.upload_label {
+    position: relative;
+    display: inline-block;
+    padding: 40px;
+    background-color: #eee;
+    border: 2px dashed #333;
+    border-radius: 8px;
+}
+
+.choose_file {
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+    margin: 20px auto;
+}
+
+.upload_label>i {
+    color: #333;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.drag_text {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.mb-3 {
+    width: 400px;
+    position: absolute;
+    bottom: -430px;
+    right: 890px;
+}
+
+.titre {
+    position: absolute;
+    bottom: -240px;
+    right: 840px;
+    width: 450px;
+}
+
+.icon {
+    border-radius: 100%;
+    border: 2px solid transparent;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 5%;
+    height: -10px;
+    margin: 30px;
+    text-align: right;
+    margin-left: 200px;
+}
+
+.icon.selected {
+    border-color: rgb(0, 0, 0);
+}
+
+.info {
+    position: absolute;
+    right: 1200px;
+    bottom: -580px;
+}
+
+.icons {
+    position: absolute;
+    bottom: -1000px;
+    right: 400px;
+    left: 200px;
+    width: 700px;
+    padding-left: -10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 80px;
+}
+
+i.selected img {
+    /*background-color: #30bd87;
+    */
+    border-color: #2719e7;
+    padding: 6px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    border: 2px solid transparent;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    cursor: pointer;
+}
+
+.btn {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    position: absolute;
+    right: 860px;
+    bottom: -1120px;
+    width: 400px;
+    background-color: rgb(71, 166, 211);
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 50px;
+    font-size: 20px;
+}
+
+.form-control[formControlName="chambre"] {
+    border-color: white !important;
+    /* set border color to default */
+}
+
+.form-control[formControlName="lits"] {
+    border-color: white !important;
+    /* set border color to default */
+}
+
+.form-control[formControlName="sdb"] {
+    border-color: white !important;
+    /* set border color to default */
+}

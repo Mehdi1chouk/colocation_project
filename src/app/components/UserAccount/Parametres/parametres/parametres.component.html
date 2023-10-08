@@ -1,0 +1,36 @@
+<div class="buttons">
+    <button type="button" class="btn btn-light" id="compte" (click)="gotocompte()">Logements</button>
+    <button type="button" class="btn btn-light" id="notif" (click)="gotonotification()">Notification</button>
+    <button type="button" class="btn btn-light" id="Favoris" (click)="gotofavoris()">Messages</button>
+    <button type="button" class="btn btn-light" id="Paramètre" (click)="gotoparametres()">Paramètre</button>
+</div>
+
+<hr style="width: 1520px;position:absolute;bottom: 510px;right:1px ;height: 75px;">
+
+
+
+<div class="change-password-container">
+    <h2>Changer Mot De Passe</h2>
+    <form (ngSubmit)="changePassword()">
+        <div class="form-group">
+            <label for="oldPassword">Ancienne mot de passe : </label>
+            <input type="password" id="oldPassword" name="oldPassword" [(ngModel)]="oldPassword" required>
+        </div>
+        <div class="form-group">
+            <label for="newPassword">Nouvelle mot de passe : </label>
+            <input type="password" id="newPassword" name="newPassword" [(ngModel)]="newPassword" required>
+        </div>
+        <button type="submit" class="changepwd">Changer mot de passe</button>
+    </form>
+
+
+
+</div>
+
+<div class="modal" [class.show]="showModal">
+    <div class="modal-content">
+        <h3>succès</h3>
+        <p>{{ successMessage }}</p>
+        <button class="close-button" (click)="hideModal()">Close</button>
+    </div>
+</div>

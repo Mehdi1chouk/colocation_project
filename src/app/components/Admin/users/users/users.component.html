@@ -1,0 +1,18 @@
+<div class="buttons">
+    <button type="button" class="btn btn-light" id="logements" (click)="gotoLogements()">logements</button>
+    <button type="button" class="btn btn-light" id="users" (click)="gotoUsers()">Utilisateurs</button>
+
+</div>
+
+<hr style="width: 1520px;position:absolute;bottom: 510px;right:1px ;height: 75px;">
+
+
+<div class="user-list">
+    <div class="user" *ngFor="let user of users">
+        <div class="user-details">
+            <p><strong>Name:</strong> {{ user.nom }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+        <button class="delete-button" (click)="deleteUser(user._id )">Delete</button>
+    </div>
+</div>

@@ -1,0 +1,180 @@
+#users {
+    position: absolute;
+    left: 120px;
+    bottom: 600px;
+    background-color: white;
+    border-color: white !important;
+    font-size: 22px;
+    border-radius: 6px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+}
+
+#logements {
+    position: absolute;
+    left: 0px;
+    bottom: 600px;
+    background-color: white;
+    border-color: white !important;
+    font-size: 22px;
+    border-radius: 6px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
+}
+
+#logements:hover {
+    background-color: #ccc;
+}
+
+#users:hover {
+    background-color: #ccc;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 35px;
+    text-align: center;
+    font-family: arial;
+    flex-basis: calc(33.33% - 20px);
+    right: -20px;
+    background-color: #ffffff;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* margin-top: 0px;*/
+    position: absolute;
+    top: 250px;
+}
+
+.card img {
+    height: 250px;
+    width: 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.card .card-body {
+    padding: 10px 50px;
+}
+
+.card .card-title {
+    font-size: 20px;
+}
+
+.card .card-text {
+    font-size: 14px;
+    color: gray;
+}
+
+.viillle {
+    position: absolute;
+    right: 50px;
+    bottom: 160px;
+    font-size: 18px;
+}
+
+.Région {
+    position: absolute;
+    right: 465px;
+    bottom: 160px;
+    font-size: 18px;
+}
+
+.quartier {
+    position: absolute;
+    right: 190px;
+    bottom: 160px;
+    font-size: 18px;
+}
+
+.vi {
+    position: absolute;
+    right: -110px;
+    bottom: 173px;
+    width: 150px;
+}
+
+.reg {
+    position: absolute;
+    right: 290px;
+    bottom: 173px;
+    width: 170px;
+}
+
+.qua {
+    position: absolute;
+    right: 15px;
+    bottom: 173px;
+    width: 170px;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 0.25rem;
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+}
+
+.search-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    width: 420px;
+    bottom: 500px;
+    height: 55px;
+    left: 150px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.search-button {
+    position: absolute;
+    right: 25px;
+}
+
+.regionx2 {
+    position: absolute;
+    bottom: -165px;
+    left: -5px;
+    width: 150px;
+}
+
+.allcontainer {
+    position: absolute;
+    bottom: 20px;
+    left: 400px;
+}

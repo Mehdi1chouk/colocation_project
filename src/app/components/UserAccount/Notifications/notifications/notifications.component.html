@@ -1,0 +1,50 @@
+<div class="buttons">
+    <button type="button" class="btn btn-light" id="compte" (click)="gotocompte()">Logements</button>
+    <button type="button" class="btn btn-light" id="notif" (click)="gotonotification()">Notification</button>
+    <button type="button" class="btn btn-light" id="Favoris" (click)="gotoMessage()">Messages</button>
+    <button type="button" class="btn btn-light" id="Paramètre" (click)="gotoparametres()">Paramètre</button>
+</div>
+
+<hr style="width: 1520px;position:absolute;bottom: 510px;right:1px ;height: 75px;">
+
+
+
+<!-- notifications.component.html -->
+<!-- notifications.component.html -->
+<div class="reservations">
+    <div *ngIf="reservations && reservations.length > 0">
+        <h2>Reservations</h2>
+        <ul>
+            <li *ngFor="let reservation of reservations">
+                L'utilisateur <b>{{ reservation.sender }}</b> souhaite louer votre logement intitulé <b>{{
+                    reservation.house }}</b> pendant ces dates: <b>{{ reservation.dates }}</b>
+                <div class="button-container">
+                    <button class="button button-delete" (click)="showConfirmationModal(reservation)">Supprimer</button>
+                    <button class="button button-accept" (click)="onConfirm()">Accepter</button>
+                    <button class="button button-contact" (click)="gotoMessage()">Contacter</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-container *ngIf="isConfirmationModalVisible">
+    <div class="modal">
+        <div class="modal-content">
+            <h3>Confirmation</h3>
+            <p>Êtes-vous sûr de vouloir supprimer cette réservation ?</p>
+            <div class="modal-actions">
+                <button class="button button-cancel" (click)="cancelDeletion()">Annuler</button>
+                <button class="button button-confirm" (click)="showConfirmationModal(reservation)">Confirmer</button>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<div class="modal" [class.show]="showModal">
+    <div class="modal-content">
+        <h3>succès</h3>
+        <p>{{ successMessage }}</p>
+        <button class="close-button" (click)="hideModal()">Close</button>
+    </div>
+</div>

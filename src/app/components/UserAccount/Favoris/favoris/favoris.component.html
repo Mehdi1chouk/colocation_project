@@ -1,0 +1,48 @@
+<div class="buttons">
+    <button type="button" class="btn btn-light" id="compte" (click)="gotocompte()">Logements</button>
+    <button type="button" class="btn btn-light" id="notif" (click)="gotonotification()">Notification</button>
+    <button type="button" class="btn btn-light" id="Favoris" (click)="gotofavoris()">Messages</button>
+    <button type="button" class="btn btn-light" id="Paramètre" (click)="gotoparametres()">Paramètre</button>
+</div>
+
+<hr style="width: 1520px;position:absolute;bottom: 510px;right:1px ;height: 75px;">
+
+
+<!--   
+<div class="messages">
+    <div *ngFor="let message of chatMessages">
+        <p>{{ message.senderName }}: {{ message.messageContent }}</p>
+    </div>
+</div>
+
+
+
+
+<div class="chat-container">
+    <div class="chat-messages">
+        <div class="message" *ngFor="let message of messages">
+            <div class="message-sender">{{ message.sender }}</div>
+            <div class="message-content">{{ message.content }}</div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" [(ngModel)]="newMessage" placeholder="Type your message...">
+        <button (click)="sendMessage(newMessage)">Send</button>
+    </div>
+</div>-->
+
+
+<div class="chat-container">
+    <div class="chat-messages">
+        <div class="message" *ngFor="let message of chatMessages">
+            <div class="message-content"
+                [ngClass]="{'sender-message': message.senderID === currentUserID, 'receiver-message': message.senderID !== currentUserID}">
+                <span class="message-sender">{{ message.senderName }}:</span> {{ message.messageContent }}
+            </div>
+        </div>
+    </div>
+    <div class="chat-input">
+        <input type="text" [(ngModel)]="newMessage" placeholder="Type your message...">
+        <button (click)="sendMessage(newMessage)">Send</button>
+    </div>
+</div>

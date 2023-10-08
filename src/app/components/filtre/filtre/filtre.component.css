@@ -1,0 +1,227 @@
+#border {
+    border-width: thin;
+    border-color: rgb(198, 196, 196);
+}
+
+.pop-up {
+    height: 600px;
+    width: 800px;
+}
+
+.carreau1 {
+    position: absolute;
+    bottom: 535px;
+    width: 800px;
+    height: 70px;
+    background-color: rgb(71, 166, 211);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.carreau2 {
+    position: fixed;
+    bottom: 70px;
+    width: 800px;
+    height: 55px;
+    background-color: rgb(93, 177, 216);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.close-icon {
+    position: relative;
+    right: -736px;
+    height: 65px;
+    top: 4px;
+}
+
+.prix {
+    position: absolute;
+    top: 20px;
+    right: 710px;
+}
+
+.prixmin {
+    position: absolute;
+    top: 90px;
+    right: 420px;
+    width: 30%;
+}
+
+.dash {
+    position: absolute;
+    top: 100px;
+    right: 168px;
+    width: 30%;
+}
+
+.prixmax {
+    position: absolute;
+    top: 90px;
+    right: 130px;
+    width: 30%;
+}
+
+.ville {
+    position: absolute;
+    top: 190px;
+    right: 700px;
+}
+
+.selectville {
+    position: absolute;
+    top: 305px;
+    right: 250px;
+    width: 40%;
+}
+
+.type {
+    position: absolute;
+    top: 390px;
+    right: 700px;
+}
+
+.selectype {
+    position: absolute;
+    top: 450px;
+    right: 310px;
+    width: 50%;
+}
+
+.selectype2 {
+    position: absolute;
+    top: 450px;
+    right: 20px;
+    width: 50%;
+}
+
+.selectype3 {
+    position: absolute;
+    top: 520px;
+    right: 250px;
+    width: 50%;
+}
+
+.selectype4 {
+    position: absolute;
+    top: 520px;
+    right: 60px;
+    width: 50%;
+}
+
+.selectype5 {
+    position: absolute;
+    top: 450px;
+    right: 150px;
+    width: 50%;
+}
+
+.viillle {
+    position: absolute;
+    right: 705px;
+    bottom: 160px;
+    font-size: 18px;
+}
+
+.Région {
+    position: absolute;
+    right: 465px;
+    bottom: 160px;
+    font-size: 18px;
+}
+
+.quartier {
+    position: absolute;
+    right: 190px;
+    bottom: 160px;
+    font-size: 18px;
+}
+
+.vi {
+    position: absolute;
+    right: 550px;
+    bottom: 173px;
+    width: 150px;
+}
+
+.reg {
+    position: absolute;
+    right: 290px;
+    bottom: 173px;
+    width: 170px;
+}
+
+.qua {
+    position: absolute;
+    right: 15px;
+    bottom: 173px;
+    width: 170px;
+}
+
+.chambreetlits {
+    position: absolute;
+    top: 600px;
+    right: 580px;
+}
+
+.chambre {
+    position: absolute;
+    right: 620px;
+    bottom: -240px;
+    font-size: 18px;
+}
+
+.nbrechambre {
+    position: absolute;
+    right: 390px;
+    bottom: -230px;
+    width: 190px;
+}
+
+.lits {
+    position: absolute;
+    right: 620px;
+    bottom: -340px;
+    font-size: 18px;
+}
+
+.nbrelits {
+    position: absolute;
+    right: 390px;
+    bottom: -330px;
+    width: 190px;
+}
+
+.sdb {
+    position: absolute;
+    right: 618px;
+    bottom: -440px;
+    font-size: 18px;
+}
+
+.nbresdb {
+    position: absolute;
+    right: 390px;
+    bottom: -428px;
+    width: 190px;
+}
+
+.btnn {
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    position: absolute;
+    right: 370px;
+    bottom: 10px;
+    background-color: #20c5e2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*border-color: black;*/
+    height: 35px;
+    width: 60px;
+}
+
+.btnn:hover {
+    background-color: #22b3bd;
+}

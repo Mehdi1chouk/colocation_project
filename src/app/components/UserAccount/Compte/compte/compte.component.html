@@ -1,0 +1,47 @@
+<div class="buttons">
+    <button type="button" class="btn btn-light" id="compte">Logements</button>
+    <button type="button" class="btn btn-light" id="notif" (click)="gotonotification()">Notification</button>
+    <button type="button" class="btn btn-light" id="Favoris" (click)="gotofavoris()">Messages</button>
+    <button type="button" class="btn btn-light" id="Paramètre" (click)="gotoparametres()">Paramètre</button>
+</div>
+
+<div>
+    <button mat-button color="primary" class="addlog" type="button" (click)="goto_add_announcement()">AJOUTER UNE
+        ANNONCE</button>
+</div>
+
+<hr style="width: 1520px;position:absolute;bottom: 510px;right:1px ;height: 75px;">
+
+<img id="userImage" [src]="ProfilImage" alt="User Image">
+<div class="salut">
+    <h1 style="font-size: 50px;">SALUT {{userFullName}}</h1>
+</div>
+
+<div class="paragraphe">
+
+    <h2>Voici votre espace réservé.Ici, vous pouvez consulter toutes les informations les plus importantes <br /> que
+        vous avez trouvées sur notre site. Vous pouvez également apporter des modifications à vos <br />annonces si vous
+        avez des modifications à
+        faire. De plus, vous avez la possibilité de supprimer<br /> vos annonces si votre bien n'est plus disponible.
+    </h2>
+</div>
+
+
+<div class="card-container">
+    <div class="card" *ngFor="let house of OwnerHouses" (click)="showDetails(house)">
+        <!-- Card content here -->
+        <img [src]="house.photos[0]" alt="House Image">
+        <div class="card-body">
+            <h5 class="card-title">{{ house.titre }}</h5>
+            <p class="card-text">{{ house.prix }} dt</p>
+            <p class="card-text">{{ house.surface }} m²</p>
+            <p class="card-text">{{ house.delegation }}</p>
+            <button type="button" class="btn1" (click)="ModifierAnnonce(house)"
+                style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">modifier
+            </button> &nbsp;
+            <button type="button" class="btn2" (click)="SupprimerAnnonce(house)"
+                style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">supprimer
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<nav class="navbar">
+    <!--  <a href="">Acceuil</a> -->
+    <div style="cursor: pointer;">
+        <div class="logo">
+
+
+            <a href=""><img src=" assets/logo/SOKNA.png " style="width: 20%;height: 15%;" /></a>
+        </div>
+
+    </div>
+
+    <a *ngIf="isLoggedIn" href="/compte/logements" style="position:absolute;right: 1320px;color: blue;"> Compte</a>
+
+
+
+    <div style="cursor: pointer;" (click)="auth()">
+        <div class="cnx">
+            <img src=" assets/icons/connexion.png " />
+        </div>
+
+        <div style="position: absolute;right: 125px;bottom: 2px;">
+            <h2 style="color: blue;">{{ isLoggedIn ? 'déconnexion' : 'se connecter' }}</h2>
+        </div>
+    </div>
+
+
+
+</nav>
+
+
+
+<!--   <div>
+        <button type="button" class="btn" (click)="goto_add_announcement()"
+            style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">AJOUTER UNE ANNONCE
+        </button>
+    </div>-->

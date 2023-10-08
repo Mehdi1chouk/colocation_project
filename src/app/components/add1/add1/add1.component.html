@@ -1,0 +1,312 @@
+<form [formGroup]="form">
+    <div class="first">
+        <p class="type"> Type</p>
+        <hr style="height:4px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0);width: 940%;">
+    </div>
+
+    <div class="radio" (change)="onRadioChange()">
+
+        <div class="form-check">
+            <div class="appartement">
+                <input class="form-check-input" type="radio" name="selectedtype" value="Appartement"
+                    formControlName="selectedtype">
+                <label class="na">
+                    Appartement
+                </label>
+            </div>
+
+            <div class="maison">
+                <input class="form-check-input" type="radio" name="selectedtype" value="Maison"
+                    formControlName="selectedtype">
+                <label class="na">
+                    Maison
+                </label>
+            </div>
+
+            <div class="villa">
+                <input class="form-check-input" type="radio" name="selectedtype" value="Villa"
+                    formControlName="selectedtype">
+                <label class="na">
+                    Villa
+                </label>
+            </div>
+
+
+            <div class="chambrepartage">
+                <input class="form-check-input" type="radio" name="selectedtype" value="chambre partagé"
+                    formControlName="selectedtype">
+                <label class="na">
+                    Chambre partagé
+                </label>
+            </div>
+
+
+            <div class="hôtes">
+                <input class="form-check-input" type="radio" name="selectedtype" value="maison d'hôte"
+                    formControlName="selectedtype">
+                <label class="na">
+                    Maison d'hôtes
+                </label>
+            </div>
+        </div>
+
+
+
+        <div *ngIf="form.value.selectedtype === 'Appartement'">
+            <div class="option">
+
+                <div>
+                    <input class="form-check-input" type="radio" value="avec Ascenseur" name="asenceur"
+                        formControlName="asenceur">
+                    <label class="na">
+                        avec Asenseur
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="radio" value="sans Ascenseur" name="asenceur"
+                        formControlName="asenceur">
+                    <label class="na">
+                        sans Asenseur
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="form.value.selectedtype === 'Maison'">
+            <div class="option">
+
+                <div>
+                    <input class="form-check-input" type="radio" value="avec garage" name="garage"
+                        formControlName="garage">
+                    <label class="na">
+                        avec garage
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="radio" value="sans garage" name="garage"
+                        formControlName="garage">
+                    <label class="na">
+                        sans garage
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="form.value.selectedtype === 'Villa'">
+            <div class="option">
+
+                <div>
+                    <input class="form-check-input" type="radio" value="avec piscine" name="piscine"
+                        formControlName="piscine">
+                    <label class="na">
+                        avec piscine
+                    </label>
+                </div>
+                <div>
+                    <input class="form-check-input" type="radio" value="sans piscine" name="piscine"
+                        formControlName="piscine">
+                    <label class="na">
+                        sans piscine
+                    </label>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div style="position: absolute;right:-370px ;top: -30px;">
+            <h2>État :</h2>
+        </div>
+        <div class="nouveau">
+            <input class="form-check-input" type="radio" name="etat" value="nouveau" formControlName="etat">
+            <label class="na">
+                &nbsp; Nouveau
+            </label>
+        </div>
+        <div class="bonetat">
+            <input class="form-check-input" type="radio" name="etat" value="Bon état" formControlName="etat">
+            <label class="na">
+                &nbsp; Bon état
+            </label>
+        </div>
+
+        <div style="position: absolute;right:-385px ;top: 60px;">
+            <h2>Étage :</h2>
+        </div>
+
+        <div class="etage">
+            <select class="form-select" aria-label="Default select example" formControlName="etage" name="etage"
+                [disabled]="form.get('etage')?.disabled">
+
+                <option value="1ére">1</option>
+                <option value="2éme">2</option>
+                <option value="3éme">3</option>
+                <option value="4éme">4</option>
+                <option value="5éme ou +">5+</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="disponibilité">
+        <p class="dispo"> Disponibilité</p>
+        <hr style="height:4px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0);width: 400%;">
+
+    </div>
+    <p id="war">veuillez selectionnez les jours ou votre logement <b>n'est pas disponible</b></p>
+
+
+    <div class="calendar-container">
+
+        <div class="month-navigation">
+            <button (click)="prevMonth()">&lt;</button>
+            <h2 id="month">{{ currentMonth }} {{ currentYear }}</h2>
+            <button id="next" (click)="nextMonth()">&gt;</button>
+        </div>
+
+
+        <div class="calendar">
+            <div class="weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="days">
+                <div *ngFor="let day of calendarData" [class.other-month]="day < 0" [class.selected]="isSelected(day)"
+                    [ngClass]="{ 'current-day': isCurrentDay(day) }" (click)="selectDay(day)" style="cursor: pointer;">
+                    {{ day !== -1 ? day : '' }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="localisation">
+        <p class="local"> Localisation</p>
+        <hr style="height:4px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0);width: 420%;">
+    </div>
+
+
+
+    <div>
+        <div class="Région">
+            <h2>Région :</h2>
+        </div>
+        <div class="reg" id="border">
+            <select class="form-select" aria-label="Default select example" formControlName="region">
+                <option value="" selected>region</option>
+                <option *ngFor="let governorate of citiesService.governorates">{{ governorate.name }}</option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <div class="ville">
+        <h2>Ville :</h2>
+    </div>
+    <div class="vi" id="border">
+        <select class="form-select" aria-label="Default select example" formControlName="delegation">
+            <option value="" selected>delegation</option>
+            <option *ngFor="let delegation of citiesService.getCitiesByRegion(form.get('region').value)"
+                [value]="delegation">
+                {{ delegation }}
+            </option>
+        </select>
+    </div>
+
+
+
+    <div class="quartier">
+        <h2>Quartier :</h2>
+    </div>
+    <div class="qua" id="border">
+        <select class="form-select" aria-label="Default select example" formControlName="localite">
+            <option value="" selected>localite</option>
+            <option *ngFor="let localite of localites" [value]="localite">{{ localite }}</option>
+        </select>
+    </div>
+
+
+
+    <div class="code_postal">
+        <h2>CP :</h2>
+    </div>
+    <div class="cp" id="border">
+        <input class="form-control" formControlName="cp">
+    </div>
+
+
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="700" fill="currentColor"
+        class="bi bi-chevron-double-right" viewBox="0 0 16 16" id="next1" (click)="onNext()"
+        style="position: fixed;bottom: -40px; right: 115px;">
+        <path fill-rule="evenodd"
+            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+        <path fill-rule="evenodd"
+            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+    </svg>
+
+    <h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;bottom:240px; right: 105px;position: absolute;cursor: pointer;position: fixed;"
+        (click)="onSubmit()">
+        S U I V A N T
+    </h2>
+    <div id="map">
+        <input class="form-control" formControlName="localisation">
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+</form>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h2 hidden>aaa</h2>

@@ -1,0 +1,249 @@
+<form [formGroup]="form">
+
+
+
+
+    <div>
+        <div class="surface">
+            <p class="local">Surface</p>
+            <h3 style="position: absolute; right: -60px; bottom: 13px;">(en m2)</h3>
+            <hr style="height: 4px; border-width: 0; color: rgb(0, 0, 0); background-color: rgb(0, 0, 0); width: 635%;">
+        </div>
+
+        <div>
+            <div class="su">
+                <h2>Surface :</h2>
+            </div>
+            <div class="suu">
+                <input class="form-control" id="border" formControlName="surface" name="surface" type="text"
+                    (input)="validateInput($event)" [ngClass]="{ 'invalid-input': isInvalidInput }">
+                <div class="error-message" *ngIf="isInvalidInput">Do not enter characters</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="chambre">
+        <h2>chambres :</h2>
+    </div>
+
+    <div style="position:absolute;bottom: 260px;right:0px;">
+        <div style="position:absolute;bottom: 100px;right: 1305px;cursor: pointer;" (click)="increase1()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+            </svg>
+        </div>
+
+        <div style="position:absolute;bottom: 100px;right: 1245px;cursor: pointer;" (click)="decrease1()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+            </svg>
+
+        </div>
+        <div style="position:absolute;bottom: 90px;right: 1265px;width: 35px;">
+            <input class="form-control" formControlName="chambre" [(ngModel)]="number" name="chambre">
+        </div>
+
+
+    </div>
+
+
+
+
+    <div class="lits">
+        <h2>Lits :</h2>
+    </div>
+
+    <div style="position:absolute;bottom: 260px;right:0px;">
+
+
+        <div style="position:absolute;bottom: 100px;right: 1110px;cursor: pointer;" (click)="increase2()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+            </svg>
+        </div>
+
+        <div style="position:absolute;bottom: 100px;right: 1050px;cursor: pointer;" (click)="decrease2()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+            </svg>
+
+        </div>
+
+        <div style="position:absolute;bottom: 90px;right: 1070px;width: 35px;">
+
+            <input class="form-control" formControlName="lits" [(ngModel)]="number2" name="lits">
+        </div>
+
+    </div>
+
+
+
+    <div class="sdb">
+        <h2>salles de bains :</h2>
+    </div>
+    <div style="position:absolute;bottom: 260px;right:0px;">
+
+        <div style="position:absolute;bottom: 100px;right: 895px;cursor: pointer;" (click)="increase3()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path
+                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+            </svg>
+        </div>
+
+        <div style="position:absolute;bottom: 100px;right: 817px;cursor: pointer;" (click)="decrease3()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+            </svg>
+
+        </div>
+        <div style="position:absolute;bottom: 90px;right: 848px;width: 35px;">
+            <input class="form-control" formControlName="sdb" [(ngModel)]="number3" name="sdb">
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="prix">
+        <p class="local">Prix</p>
+        <h3 style="position: absolute; right: -70px; bottom: 13px;">(par nuit)</h3>
+        <hr style="height: 4px; border-width: 0; color: rgb(0, 0, 0); background-color: rgb(0, 0, 0); width: 1290%;">
+    </div>
+
+    <div>
+        <div class="pr">
+            <h2>Prix :</h2>
+        </div>
+        <div class="prr">
+            <input class="form-control" id="border" formControlName="prix" name="prix" type="text"
+                (input)="validateInputPrix($event)" [ngClass]="{ 'invalid-input': isInvalidInputPrix }">
+            <div class="error-message" *ngIf="isInvalidInputPrix">Do not enter characters</div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="photo">
+        <p class="local"> Photos et description</p>
+        <hr style="height:4px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0);width: 230%;">
+    </div>
+
+
+    <div class="container">
+        <input type="file" (change)="selectfiles($event)" class="form-control" name="photos" multiple>
+    </div>
+
+
+
+
+
+    <div class="titre">
+        <label for="exampleFormControlTextarea1" class="form-label">
+            <h3 style="position: absolute; bottom: 20px;">Titre :</h3>
+        </label>
+        <input class="form-control" type="text" placeholder="donner un titre a votre annonce"
+            aria-label="default input example" formControlName="titre" name="titre" (input)="validateInputTitre($event)"
+            [ngClass]="{ 'invalid-input': isInvalidInputTitre }">
+        <div class="error-message" *ngIf="isInvalidInputTitre">Do not enter numbers</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">
+            <h3 style="position: absolute; bottom: 70px;">Description :</h3>
+        </label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"
+            name="description" (input)="validateInputDescription($event)"
+            [ngClass]="{ 'invalid-input': isInvalidInputDescription }"></textarea>
+        <div class="error-message" *ngIf="isInvalidInputDescription">Do not enter numbers</div>
+    </div>
+
+
+
+
+
+
+
+    <div class="info">
+        <p class="local">Equipement</p>
+        <hr style="height:4px;border-width:0;color:rgb(0, 0, 0);background-color:rgb(0, 0, 0);width: 425%;">
+
+    </div>
+    <h3 style="position: absolute;bottom: -620px;right:790px;">veuillez selectionnez ces options , s'ils sont disponible
+        dans votre logement </h3>
+
+
+
+
+    <div class="icons">
+
+        <i *ngFor="let icon of icons; let i = index" (click)="onIconClick(i)" [ngClass]="{'selected': icon.selected}">
+            <img [src]="icon.src" />
+            <!--   <h3 style="position: absolute; bottom: -960px; right: {{ 1230 - (i * 130) }}px;" [id]="icon.name">{{
+                icon.name }}</h3>  -->
+        </i>
+    </div>
+
+    <div style="cursor: pointer;color: rgb(24, 26, 25);">
+        <h3 style="position: absolute;bottom: -760px;right: 1225px;" id="machinealaver">machine a laver</h3>
+        <h3 style="position: absolute;bottom: -760px;right: 1105px;" id="Réfrigérateur">Réfrigérateur</h3>
+        <h3 style="position: absolute;bottom: -760px;right: 985px;" id="Micro_onde">Micro_onde</h3>
+        <h3 style="position: absolute;bottom: -760px;right: 870px;" id="Vaisselle">Vaisselle</h3>
+        <h3 style="position: absolute;bottom: -760px;right: 750px;" id="Four">Four</h3>
+
+        <h3 style="position: absolute;bottom: -900px;right: 1250px;" id="Chauffage">Chauffage</h3>
+        <h3 style="position: absolute;bottom: -900px;right: 1120px;" id="Climatiseur">Climatiseur</h3>
+        <h3 style="position: absolute;bottom: -900px;right: 1010px;" id="Sécurité">Sécurité</h3>
+        <h3 style="position: absolute;bottom: -900px;right: 890px;" id="Tv">Tv</h3>
+        <h3 style="position: absolute;bottom: -900px;right: 750px;" id="Wifi">Wifi</h3>
+
+        <h3 style="position: absolute;bottom: -1020px;right: 1250px;" id="Concierge">Concierge</h3>
+        <h3 style="position: absolute;bottom: -1020px;right: 1125px;" id="Asenceur">Asenceur</h3>
+        <h3 style="position: absolute;bottom: -1020px;right: 1000px;" id="Balcon">Balcon</h3>
+        <h3 style="position: absolute;bottom: -1020px;right: 875px;" id="Jardin">Jardin</h3>
+        <h3 style="position: absolute;bottom: -1020px;right: 740px;" id="Piscine">Piscine</h3>
+    </div>
+
+
+
+
+    <div>
+        <button type="button" class="btn" (click)="add()">P u b l i e r &nbsp;&nbsp; l ' a n n o n c e</button>
+    </div>
+
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+        style="position: fixed;bottom: 270px; right: 90px;" class="bi bi-chevron-double-left" viewBox="0 0 16 16"
+        id="previous" (click)="retour()">
+        <path fill-rule="evenodd"
+            d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+        <path fill-rule="evenodd"
+            d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+    </svg>
+
+    <h2 (click)="retour()"
+        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;bottom:230px; right: 90px;position: absolute;cursor: pointer;position: fixed;">
+        R E T O U R
+    </h2>
+
+
+
+</form>
